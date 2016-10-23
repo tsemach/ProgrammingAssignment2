@@ -52,7 +52,6 @@ makeCacheMatrix <- function(x = matrix()) {
     #   but if any other object *hold* a pointer (a reference) to that return value of makeCacheMatrix it will not distroy by the garbage collector
     #   thats why m and x are kapt alive after makeCacheMatrix is return
     setinverse <- function(inv) { 
-        print("in setinverse")
         m <<- inv
     }
     
@@ -77,8 +76,6 @@ cacheSolve <- function(x, ...) {
     m <- x$getinverse()
     
     if( ! is.null(m) ) {
-        message("getting cached data")
-        
         return(m)
     }
     
